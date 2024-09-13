@@ -1,19 +1,29 @@
-  // menu-btn-mobile
-  const menuBtn = document.querySelector('.menu-icon');
-  const navlinks = document.querySelector('.nav-links');
-  menuBtn.addEventListener('click', () => {
-      navlinks.classList.toggle('mobile-menu');
-  })
-  // scroll riview
-  const animatedItems = document.querySelectorAll('.scroll-animate');
+// Menu button mobile
+const menuBtn = document.querySelector('.menu-icon');
+const navlinks = document.querySelector('.nav-links');
+const navItems = document.querySelectorAll('.nav-links li a'); // Mengambil semua tautan di dalam navbar
+
+menuBtn.addEventListener('click', () => {
+    navlinks.classList.toggle('mobile-menu');
+});
+
+// Tutup navbar ketika tautan diklik
+navItems.forEach(item => {
+    item.addEventListener('click', () => {
+        navlinks.classList.remove('mobile-menu');
+    });
+});
+
+// Scroll review animation
+const animatedItems = document.querySelectorAll('.scroll-animate');
 
 const scrollHandler = () => {
-animatedItems.forEach(item => {
-const rect = item.getBoundingClientRect();
-if (rect.top < window.innerHeight && rect.bottom > 0) {
-item.classList.add('show');
-}
-});
+    animatedItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            item.classList.add('show');
+        }
+    });
 };
 
 window.addEventListener('scroll', scrollHandler);
