@@ -286,7 +286,7 @@ p {
 
 .explore-content .ctn:hover {
     background-color: #FF4500;
-    color: #000;
+    color: white;
 }
 
 .img-col {
@@ -304,13 +304,13 @@ p {
 #tours .img-gallery {
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
-    align-items: center;
+    justify-content: space-between;
 }
 
-.img-gallery img {
-    max-width: 250px;
-    margin: 9px;
+ #tours .img-gallery img {
+    max-width: 48%; /* Ini untuk memastikan ada 4 gambar dalam satu baris */
+    margin-bottom: 20px;
+    object-fit: cover;
 }
 
 .content-col h1 {
